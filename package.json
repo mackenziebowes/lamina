@@ -1,32 +1,32 @@
 {
-	"name": "lamina",
-	"version": "0.0.1",
-	"module": "index.ts",
-	"type": "module",
-	"private": true,
-	"bin": {
-		"lmd": "index.ts"
-	},
-	"devDependencies": {
-		"@types/bun": "latest"
-	},
-	"peerDependencies": {
-		"typescript": "^5"
-	},
-	"dependencies": {
-		"@types/figlet": "^1.7.0",
-		"chroma-js": "^3.1.2",
-		"figlet": "^1.8.1",
-		"mdast-util-directive": "^3.1.0",
-		"mdast-util-from-markdown": "^2.0.2",
-		"mdast-util-frontmatter": "^2.0.1",
-		"mdast-util-to-string": "^4.0.0",
-		"micromark-extension-directive": "^4.0.0",
-		"rehype-stringify": "^10.0.1",
-		"remark-gfm": "^4.0.1",
-		"remark-parse": "^11.0.0",
-		"remark-rehype": "^11.1.2",
-		"unified": "^11.0.5",
-		"unist-util-visit": "^5.0.0"
-	}
+  "name": "lamina",
+  "version": "0.0.2",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "lmd": "index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.7.0",
+    "chroma-js": "^3.1.2",
+    "figlet": "^1.8.1",
+    "mdast-util-directive": "^3.1.0",
+    "mdast-util-from-markdown": "^2.0.2",
+    "mdast-util-frontmatter": "^2.0.1",
+    "mdast-util-to-string": "^4.0.0",
+    "micromark-extension-directive": "^4.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  }
 }

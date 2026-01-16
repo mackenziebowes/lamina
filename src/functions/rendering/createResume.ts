@@ -1,0 +1,35 @@
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import remarkGfm from "remark-gfm";
+import rehypeStringify from "rehype-stringify";
+// your mdast-utils if you need custom directives/frontmatter
+import { fromMarkdown } from "mdast-util-from-markdown";
+import { frontmatterFromMarkdown } from "mdast-util-frontmatter";
+import { remarkTableToDict } from "../minor/table-to-def";
+import { directive } from "micromark-extension-directive";
+import { visit } from "unist-util-visit";
+import fs from "node:fs";
+import { join } from "node:path";
+import { cwd } from "node:process";
+import { addCss } from "../minor/prep-resume-view";
+
+export async function mdToHtmlResume(
+  targetIn: string,
+  targetOut: string,
+): Promise<string> {
+  const targetInPath = join(cwd(), targetIn);
+  const targetOutPath = join(cwd(), targetOut);
+  const targetFile = fs.readFileSync(targetInPath, "utf-8");
+  const file = await unified()
+    .use(remarkParse, { extensions: [directive] })
+    .use(remarkGfm)
+    .use(remarkTableToDict)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true })
+    .process(targetFile);
+  const stringedFile = String(file);
+  const withCss = addCss(stringedFile);
+  fs.writeFileSync(targetOutPath, withCss, "utf-8");
+  return String(file);
+}
