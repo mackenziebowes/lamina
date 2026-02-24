@@ -11,9 +11,9 @@ export const shtml: Command = {
   name: "html",
   description: "transform md into basic html",
   instructions:
-    "indicate the relative path to the md to transform and the relative path of your desired output file (including file name and extension)",
+    "indicate the relative path to the md to transform. optionally, provide an output path (defaults to same location with .html extension)",
   run: async (args) => {
-    const html = await mdToHtml(args[0]!, args[1]!);
+    const html = await mdToHtml(args[0]!, args[1]);
     if (html) {
       console.log("Done!");
     }
@@ -24,9 +24,9 @@ export const rhtml: Command = {
   name: "r-html",
   description: "transform md into styled html for reading",
   instructions:
-    "indicate the relative path to the md to transform and the relative path of your desired output file (including file name and extension)",
+    "indicate the relative path to the md to transform. optionally, provide an output path (defaults to same location with .html extension)",
   run: async (args) => {
-    const html = await mdToHtmlReading(args[0]!, args[1]!);
+    const html = await mdToHtmlReading(args[0]!, args[1]);
     if (html) {
       console.log("Done!");
     }
@@ -38,9 +38,9 @@ export const cvhtml: Command = {
   description:
     "transform md into styled html for printing to PDF (as a resume) (for a j*b)",
   instructions:
-    "indicate the relative path to the md to transform and the relative path of your desired output file (including file name and extension)",
+    "indicate the relative path to the md to transform. optionally, provide an output path (defaults to same location with .html extension)",
   run: async (args) => {
-    const html = await mdToHtmlResume(args[0]!, args[1]!);
+    const html = await mdToHtmlResume(args[0]!, args[1]);
     if (html) {
       console.log("Done!");
     }

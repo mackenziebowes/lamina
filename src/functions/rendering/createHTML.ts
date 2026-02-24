@@ -15,10 +15,11 @@ import { cwd } from "node:process";
 
 export async function mdToHtml(
 	targetIn: string,
-	targetOut: string
+	targetOut?: string
 ): Promise<string> {
 	const targetInPath = join(cwd(), targetIn);
-	const targetOutPath = join(cwd(), targetOut);
+	const outputPath = targetOut ?? targetIn.replace(/\.md$/i, ".html");
+	const targetOutPath = join(cwd(), outputPath);
 	const targetFile = fs.readFileSync(targetInPath, "utf-8");
 	const file = await unified()
 		// parse markdown into MDAST (with frontmatter+directives enabled)
