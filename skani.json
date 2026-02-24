@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "environment": {
+    "name": "skani-project",
+    "created": "2026-02-24T16:27:46.198Z",
+    "updated": "2026-02-24T16:27:46.919Z"
+  },
+  "skills": [
+    {
+      "id": "anthropics-skills-frontend-design",
+      "name": "skills",
+      "version": "main",
+      "source": {
+        "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+        "type": "github",
+        "owner": "anthropics",
+        "repo": "skills",
+        "ref": "main",
+        "path": "skills/frontend-design"
+      },
+      "installedAt": "2026-02-24T16:27:46.198Z"
+    }
+  ]
+}
